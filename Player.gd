@@ -21,7 +21,6 @@ func _process(delta):
 	update()
 
 func _draw():
-	var circle = []
 	for point in points:
 		draw_circle((point-position).rotated(-rotation), 5, Color(.867, .91, .247, 0.1))
 	if hole.size() > 3:
@@ -57,14 +56,15 @@ func trail():
 		if points.size() > maxPoints:
 			points.pop_back()
 	
-	var idx = 0
 	hole.clear()
+	var i = 0
 	
-	for point in points:
-		var dist = (position - point).length()
-		if  dist < 30:
-			var i = idx
-			while i > 0:
-				hole.push_back((points[i]-position).rotated(-rotation))
-				i = i - 1
-		idx = idx + 1
+	for idx in points.size():
+		var dist = (position - points[idx]).length()
+		if  dist < 30 and idx > 0:
+			i = idx
+	while i > 0:
+		hole.push_back((points[i]-position).rotated(-rotation))
+		i -= 1
+	if !hole.empty(): 
+		points = [position]
