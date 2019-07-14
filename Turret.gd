@@ -30,7 +30,6 @@ func aim():
 		if result.collider.name == 'Player':
 			rotation = (target.position - position).angle()
 			if seen == false:
-				can_shoot = false
 				$ShootTimer.start()
 				$Sprite.self_modulate.r = 1
 				seen = true
@@ -58,6 +57,15 @@ func _on_Visibility_body_entered(body):
 func _on_Visibility_body_exited(body):
 	if body == target:
 		target = null
+		$ShootTimer.stop()
+		can_shoot = false
+		seen = false
+		$Sprite.self_modulate.r = 0.5
 
 func _on_ShootTimer_timeout():
 	can_shoot = true
+
+func _on_hurtbox_area_entered(area):
+	if area.get_name() == 'hole':
+		queue_free()
+
