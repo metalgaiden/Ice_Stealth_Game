@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 24, 24 )
+[sub_resource type="CircleShape2D" id=1]
+radius = 20.0
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 0, 0, 0, 0, 0, 0 )
 
 [node name="Player" type="KinematicBody2D"]
+rotation = -1.5708
 collision_layer = 2
 script = ExtResource( 1 )
 __meta__ = {
@@ -24,3 +28,9 @@ shape = SubResource( 1 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 1.1, 1.1 )
+
+[node name="hole" type="Area2D" parent="."]
+collision_layer = 32
+
+[node name="hole_shape" type="CollisionShape2D" parent="hole"]
+shape = SubResource( 2 )
