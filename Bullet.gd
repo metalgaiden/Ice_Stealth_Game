@@ -13,6 +13,5 @@ func _physics_process(delta):
 
 func _on_Bullet_body_entered(body):
 	if body.get_name() == 'Player':
-# warning-ignore:return_value_discarded
 		get_tree().change_scene("Game over.tscn")
 	queue_free()
