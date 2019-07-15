@@ -1,9 +1,7 @@
 extends KinematicBody2D
 
-export (int) var detect_radius
 export (float) var fire_rate
 export (PackedScene) var Bullet
-var vis_color = Color(.867, .91, .247, 0.1)
 var laser_color = Color(1.0, .329, .298)
 
 var target
@@ -12,7 +10,6 @@ var can_shoot = false
 var seen = false
 
 func _ready():
-	var shape = $Visibility/CollisionShape2D.shape
 	$ShootTimer.wait_time = fire_rate
 	$Sprite.self_modulate.r = 0.5
 

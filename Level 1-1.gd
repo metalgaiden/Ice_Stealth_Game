@@ -11,6 +11,3 @@ func set_camera_limits():
 	$Player/Camera2D.limit_top = map_size.position.y * cell_size.y
 	$Player/Camera2D.limit_right = map_size.end.x * cell_size.x
 	$Player/Camera2D.limit_bottom = map_size.end.y * cell_size.y
-
-func _on_Area2D_body_entered(body):
-	get_tree().change_scene("Level 1-1.tscn")
