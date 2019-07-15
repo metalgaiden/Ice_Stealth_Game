@@ -35,10 +35,11 @@ position = Vector2( 483.085, 436.841 )
 rotation = 1.5708
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 513.361, 123.066 )
+position = Vector2( 513.361, 125.458 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
