@@ -27,6 +27,13 @@ func _draw():
 		draw_colored_polygon(hole, Color(.867, .91, .247, 0.1))
 		$hole/hole_shape.shape.set_point_cloud(hole)
 
+func clear():
+	var empty = Vector2(0,0)
+	var empty_arr = [0,0,0]
+	for i in empty_arr:
+		i = empty
+	$hole/hole_shape.shape.set_point_cloud(empty_arr)
+
 func get_input():
 	if Input.is_action_pressed('right'):
 		rotation_degrees += turn_speed
@@ -53,6 +60,7 @@ func get_input():
 func trail():
 	if (position - points[0]).length() > minPointDist :
 		points.push_front(position)
+		clear()
 		if points.size() > maxPoints:
 			points.pop_back()
 	
