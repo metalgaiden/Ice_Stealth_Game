@@ -24,18 +24,127 @@ __meta__ = {
 }
 
 [node name="Turret" parent="." instance=ExtResource( 4 )]
-position = Vector2( 787.234, 814.829 )
-rotation = 3.14159
+position = Vector2( 124.907, 746.621 )
+rotation = -0.0634601
+fire_rate = 0.001
+
+[node name="Turret13" parent="." instance=ExtResource( 4 )]
+position = Vector2( 260.891, 589.053 )
+rotation = -0.252703
+fire_rate = 0.001
+
+[node name="Turret7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 127.065, 394.791 )
+rotation = -0.0634601
+fire_rate = 0.001
+
+[node name="Turret18" parent="." instance=ExtResource( 4 )]
+position = Vector2( 101.164, 578.261 )
+rotation = -0.252703
+fire_rate = 0.001
 
 [node name="Turret2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 180.695, 1226.22 )
+position = Vector2( 865.263, 975.419 )
+rotation = 3.22885
+fire_rate = 0.001
+
+[node name="Turret14" parent="." instance=ExtResource( 4 )]
+position = Vector2( 886.848, 660.282 )
+rotation = 3.03961
+fire_rate = 0.001
+
+[node name="Turret8" parent="." instance=ExtResource( 4 )]
+position = Vector2( 822.094, 845.911 )
+rotation = 3.22885
+fire_rate = 0.001
+
+[node name="Turret20" parent="." instance=ExtResource( 4 )]
+position = Vector2( 645.099, 692.66 )
+rotation = 3.03961
+fire_rate = 0.001
 
 [node name="Turret3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 483.085, 436.841 )
-rotation = 1.5708
+position = Vector2( 593.296, 1286.24 )
+rotation = 4.08499
+fire_rate = 0.001
+
+[node name="Turret16" parent="." instance=ExtResource( 4 )]
+position = Vector2( 813.46, 1217.17 )
+rotation = 3.89574
+fire_rate = 0.001
+
+[node name="Turret10" parent="." instance=ExtResource( 4 )]
+position = Vector2( 828.569, 1234.44 )
+rotation = 4.08499
+fire_rate = 0.001
+
+[node name="Turret19" parent="." instance=ExtResource( 4 )]
+position = Vector2( 917.066, 1130.83 )
+rotation = 3.89574
+fire_rate = 0.001
+
+[node name="Turret4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 150.809, 1292.71 )
+rotation = 5.46963
+fire_rate = 0.001
+
+[node name="Turret15" parent="." instance=ExtResource( 4 )]
+position = Vector2( 131.383, 1199.9 )
+rotation = 5.28039
+fire_rate = 0.001
+
+[node name="Turret9" parent="." instance=ExtResource( 4 )]
+position = Vector2( 308.378, 1128.67 )
+rotation = 5.46963
+fire_rate = 0.001
+
+[node name="Turret22" parent="." instance=ExtResource( 4 )]
+position = Vector2( 127.066, 1124.35 )
+rotation = 5.28039
+fire_rate = 0.001
+
+[node name="Turret5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 211.246, 228.588 )
+rotation = 7.2273
+fire_rate = 0.018
+
+[node name="Turret17" parent="." instance=ExtResource( 4 )]
+position = Vector2( 191.82, 135.774 )
+rotation = 7.03805
+fire_rate = 0.018
+
+[node name="Turret11" parent="." instance=ExtResource( 4 )]
+position = Vector2( 206.929, 153.042 )
+rotation = 7.2273
+fire_rate = 0.018
+
+[node name="Turret24" parent="." instance=ExtResource( 4 )]
+position = Vector2( 146.492, 273.916 )
+rotation = 7.03805
+fire_rate = 0.018
+
+[node name="Turret6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 783.241, 224.271 )
+rotation = 8.36872
+fire_rate = 0.018
+
+[node name="Turret21" parent="." instance=ExtResource( 4 )]
+position = Vector2( 763.815, 131.457 )
+rotation = 8.17947
+fire_rate = 0.018
+
+[node name="Turret12" parent="." instance=ExtResource( 4 )]
+position = Vector2( 707.695, 472.496 )
+rotation = 8.36872
+fire_rate = 0.018
+
+[node name="Turret23" parent="." instance=ExtResource( 4 )]
+position = Vector2( 481.055, 522.14 )
+rotation = 8.17947
+fire_rate = 0.018
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 513.361, 125.458 )
+position = Vector2( 523.444, 84.8812 )
 __meta__ = {
 "_edit_group_": true
 }
