@@ -16,31 +16,32 @@ tile_data = PoolIntArray( -131075, 0, 0, -131074, 0, 0, -131073, 0, 0, -196608, 
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 500.72, 299.814 )
+rotation = -3.04598
 
 [node name="Turret" parent="." instance=ExtResource( 4 )]
-position = Vector2( 357.307, 474.238 )
-rotation = -0.860467
+position = Vector2( 174.809, 461.935 )
+rotation = -0.50402
 
 [node name="Turret2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 523.401, 125.646 )
+position = Vector2( 511.098, -56.8522 )
 rotation = 1.6271
 
 [node name="Turret3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 550.058, 484.491 )
-rotation = -1.90835
+position = Vector2( 818.679, 511.148 )
+rotation = -2.49179
 
 [node name="Turret4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 359.357, 203.567 )
+position = Vector2( 230.173, 51.8268 )
 rotation = 0.704208
 
 [node name="Turret5" parent="." instance=ExtResource( 4 )]
-position = Vector2( 662.838, 222.021 )
-rotation = 2.62035
+position = Vector2( 650.535, -48.6505 )
+rotation = 1.98699
 
 [node name="Turret6" parent="." instance=ExtResource( 4 )]
-position = Vector2( 269.134, 340.953 )
-rotation = -0.131671
+position = Vector2( 326.549, -21.9928 )
+rotation = 1.07117
 
 [node name="Turret7" parent="." instance=ExtResource( 4 )]
-position = Vector2( 703.849, 414.772 )
-rotation = -2.55762
+position = Vector2( 753.062, 13.75 )
+rotation = -3.96617
