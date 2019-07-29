@@ -3,6 +3,7 @@ extends Node2D
 func _ready():
 	randomize()
 	set_camera_limits()
+	$Tank.start($Player)
 
 func set_camera_limits():
 	var map_size = $TileMap.get_used_rect()

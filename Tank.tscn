@@ -7,6 +7,7 @@
 extents = Vector2( 128.447, 127.702 )
 
 [sub_resource type="CircleShape2D" id=2]
+radius = 20.0
 
 [node name="Tank" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -16,6 +17,7 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 self_modulate = Color( 0.956863, 0.529412, 0.027451, 1 )
+rotation = 1.5708
 scale = Vector2( 4, 4 )
 texture = ExtResource( 2 )
 
