@@ -39,13 +39,13 @@ func get_input():
 		rotation_degrees += turn_speed
 		speed *= pow(friction, 3)
 		if Input.is_action_pressed('down'):
-			rotation_degrees += turn_speed * 1.3
+			rotation_degrees += turn_speed * 1.1
 			speed *= pow(friction, 3)
 	if Input.is_action_pressed('left'):
 		rotation_degrees -= turn_speed
 		speed *= pow(friction, 3)
 		if Input.is_action_pressed('down'):
-			rotation_degrees -= turn_speed * 1.3
+			rotation_degrees -= turn_speed * 1.1
 			speed *= pow(friction, 3)
 	
 	velocity = Vector2(1,0).rotated(rotation)
