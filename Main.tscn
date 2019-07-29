@@ -21,14 +21,18 @@ __meta__ = {
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 211.655, 381.568 )
 
-[node name="Level transfer" parent="." instance=ExtResource( 4 )]
-position = Vector2( 422.6, 165.085 )
+[node name="level 1-1" parent="." instance=ExtResource( 4 )]
+position = Vector2( 376.89, 145.746 )
 level = "Level 1-1"
 
-[node name="Level transfer2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 570.444, 365.929 )
+[node name="Have fun" parent="." instance=ExtResource( 4 )]
+position = Vector2( 600.331, 436.252 )
 level = "Have_fun"
 
-[node name="Level transfer3" parent="." instance=ExtResource( 4 )]
+[node name="Tutorial" parent="." instance=ExtResource( 4 )]
 position = Vector2( 220.371, 89.2641 )
 level = "Tutorial"
+
+[node name="level 1-boss" parent="." instance=ExtResource( 4 )]
+position = Vector2( 489.358, 286.17 )
+level = "level 1-boss"

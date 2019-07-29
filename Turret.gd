@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 export (float) var fire_rate
 export (PackedScene) var Bullet
+export (PackedScene) var hole
 var laser_color = Color(1.0, .329, .298)
 
 var target
@@ -64,5 +65,11 @@ func _on_ShootTimer_timeout():
 
 func _on_hurtbox_area_entered(area):
 	if area.get_name() == 'hole':
+		call_deferred('make_hole')
 		queue_free()
+
+func make_hole():
+	var a = hole.instance()
+	a.start(global_position, 0)
+	get_parent().add_child(a)
 
