@@ -7,4 +7,4 @@ func _ready():
 
 func _on_Level_transfer_area_entered(area):
 	if area.get_name() == 'hole':
-		get_tree().change_scene(level + '.tscn')
+		get_tree().change_scene('Levels/' + level + '.tscn')
