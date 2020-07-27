@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="KGBTQ"
+config/name="Ice_Stealth_Game"
 run/main_scene="res://Levels/Main.tscn"
 config/icon="res://Sprites/icon.png"
 
