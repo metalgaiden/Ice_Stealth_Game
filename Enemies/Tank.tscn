@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Enemies/Tank.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/icon.png" type="Texture" id=2]
+[ext_resource path="res://Enemies/Missile.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 128.447, 127.702 )
@@ -11,6 +12,7 @@ radius = 20.0
 
 [node name="Tank" type="KinematicBody2D"]
 script = ExtResource( 1 )
+Missile = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -48,5 +50,9 @@ shape = SubResource( 2 )
 modulate = Color( 1, 0, 0, 1 )
 rotation = 1.5708
 texture = ExtResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
 [connection signal="area_entered" from="Right wheel" to="." method="_on_Right_wheel_area_entered"]
 [connection signal="area_entered" from="left wheel" to="." method="_on_left_wheel_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Enemies/Bullet.gd" type="Script" id=1]
 
-
 [node name="Bullet" type="Area2D"]
 collision_layer = 16
 collision_mask = 3
