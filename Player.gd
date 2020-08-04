@@ -7,8 +7,8 @@ const acc = 3
 const friction = .999
 
 var points = []
-var minPointDist = 50
-var maxPoints = 15
+var minPointDist = 10
+var maxPoints = 50
 var hole = []
 
 func _ready():
@@ -21,8 +21,12 @@ func _process(delta):
 	update()
 
 func _draw():
+	var rot_points = []
 	for point in points:
-		draw_circle((point-position).rotated(-rotation), 5, Color(.867, .91, .247, 0.1))
+		#draw_circle((point-position).rotated(-rotation), 5, Color(.867, .91, .247, 0.1))
+		rot_points.append((point-position).rotated(-rotation))
+	if rot_points.size() > 3:
+		draw_polyline(rot_points, Color(.867, .91, .247, 0.1), 3)
 	if hole.size() > 3:
 		draw_colored_polygon(hole, Color(.867, .91, .247, 0.1))
 		$hole/hole_shape.shape.set_point_cloud(hole)
@@ -69,7 +73,7 @@ func trail():
 	
 	for idx in points.size():
 		var dist = (position - points[idx]).length()
-		if  dist < 30 and idx > 0:
+		if  dist < minPointDist/1.5 and idx > 0:
 			i = idx
 	while i > 0:
 		hole.push_back((points[i]-position).rotated(-rotation))
