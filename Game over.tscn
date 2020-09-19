@@ -6,6 +6,9 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="."]
 margin_left = 439.117
@@ -21,5 +24,19 @@ margin_left = 414.599
 margin_top = 338.223
 margin_right = 579.599
 margin_bottom = 358.223
-text = "Continue?"
+text = "Continue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 415.013
+margin_top = 368.275
+margin_right = 580.013
+margin_bottom = 388.275
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]

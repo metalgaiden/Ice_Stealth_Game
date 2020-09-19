@@ -1,4 +1,5 @@
 extends Area2D
+onready var switcher = get_node("/root/switcher")
 
 var speed = 1000
 var velocity = Vector2()
@@ -13,6 +14,6 @@ func _physics_process(delta):
 
 func _on_Bullet_body_entered(body):
 	if body.get_name() == 'Player':
-		get_tree().change_scene("Game over.tscn")
+		switcher.switch_scene("Game over.tscn")
 	queue_free()
 	

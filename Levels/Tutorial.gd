@@ -1,4 +1,5 @@
 extends Node2D
+onready var switcher = get_node("/root/switcher")
 
 func _ready():
 	randomize()
@@ -15,4 +16,4 @@ func set_camera_limits():
 
 func _on_Area2D_body_entered(body):
 	if body.get_name() == 'Player':
-		get_tree().change_scene("Main.tscn")
+		switcher.switch_scene("res://Levels/Main.tscn")

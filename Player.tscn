@@ -4,7 +4,7 @@
 [ext_resource path="res://Sprites/icon.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 5.34041
+radius = 13.3294
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 0, 0, 0, 0 )

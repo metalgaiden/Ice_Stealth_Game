@@ -1,4 +1,5 @@
 extends Area2D
+onready var switcher = get_node("/root/switcher")
 
 var target
 var steer_force = 50
@@ -27,7 +28,7 @@ func seek():
 
 func _on_Missile_body_entered(body):
 	if body.get_name() == 'Player':
-		get_tree().change_scene("Game over.tscn")
+		switcher.switch_scene("Game over.tscn")
 		queue_free()
 
 func _on_Timer_timeout():

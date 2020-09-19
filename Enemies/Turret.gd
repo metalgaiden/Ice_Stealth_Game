@@ -6,9 +6,10 @@ export (PackedScene) var hole
 var laser_color = Color(1.0, .329, .298)
 
 var target
-var hit_pos
+var hit_pos = Vector2(0,0)
 var can_shoot = false
 var seen = false
+var hole_shape
 
 func _ready():
 	$ShootTimer.wait_time = fire_rate
@@ -41,7 +42,7 @@ func shoot(pos):
 	get_parent().add_child(b)
 	can_shoot = false
 	$ShootTimer.start()
-	
+
 func _draw():
 	if target:
 		draw_line(Vector2(), (hit_pos - position).rotated(-rotation), laser_color)
@@ -65,11 +66,18 @@ func _on_ShootTimer_timeout():
 
 func _on_hurtbox_area_entered(area):
 	if area.get_name() == 'hole':
+		var arr = area.get_children()
+		hole_shape = arr[0].shape.points
 		call_deferred('make_hole')
 		queue_free()
 
 func make_hole():
 	var a = hole.instance()
-	a.start(global_position, 0)
+	var radius
+	if target:
+		radius = target.get_global_position().distance_to(self.get_global_position())
+	else:
+		radius = 1
+	a.start(global_position, radius)
 	get_parent().add_child(a)
 
