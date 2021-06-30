@@ -1,0 +1,198 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://scenes/common/assets/ice.png" type="Texture" id=1]
+[ext_resource path="res://ui/level_transfer/Level transfer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/common/assets/materials/snow.tres" type="Resource" id=4]
+[ext_resource path="res://scenes/tutorial/Tutorial.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/boss/level 1-boss.tscn" type="PackedScene" id=7]
+[ext_resource path="res://addons/rmsmartshape/shapes/shape_closed.gd" type="Script" id=9]
+[ext_resource path="res://addons/rmsmartshape/shapes/shape_meta.gd" type="Script" id=10]
+[ext_resource path="res://addons/rmsmartshape/shapes/shape_open.gd" type="Script" id=11]
+[ext_resource path="res://addons/rmsmartshape/shapes/point_array.gd" type="Script" id=15]
+[ext_resource path="res://addons/rmsmartshape/vertex_properties.gd" type="Script" id=18]
+[ext_resource path="res://addons/rmsmartshape/shapes/point.gd" type="Script" id=19]
+[ext_resource path="res://addons/rmsmartshape/materials/shape_material.gd" type="Script" id=21]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 18 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 19 )
+position = Vector2( -15.8789, 182.244 )
+point_in = Vector2( -94, 132 )
+point_out = Vector2( 94, -132 )
+properties = SubResource( 1 )
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 18 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 19 )
+position = Vector2( 478.121, 14.2438 )
+point_in = Vector2( -208, -58 )
+point_out = Vector2( 208, 58 )
+properties = SubResource( 3 )
+
+[sub_resource type="Resource" id=5]
+script = ExtResource( 18 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=6]
+script = ExtResource( 19 )
+position = Vector2( -15.8789, 182.244 )
+point_in = Vector2( -94, 132 )
+point_out = Vector2( 94, -132 )
+properties = SubResource( 5 )
+
+[sub_resource type="Resource" id=7]
+script = ExtResource( 18 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=8]
+script = ExtResource( 19 )
+position = Vector2( 778.121, 352.244 )
+point_in = Vector2( 12, -188 )
+point_out = Vector2( -12, 188 )
+properties = SubResource( 7 )
+
+[sub_resource type="Resource" id=9]
+script = ExtResource( 18 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=10]
+script = ExtResource( 19 )
+position = Vector2( 564.121, 652.244 )
+point_in = Vector2( 172, -62 )
+point_out = Vector2( -172, 62 )
+properties = SubResource( 9 )
+
+[sub_resource type="Resource" id=11]
+script = ExtResource( 18 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=12]
+script = ExtResource( 19 )
+position = Vector2( 74.1211, 584.244 )
+point_in = Vector2( 128, 90 )
+point_out = Vector2( -128, -90 )
+properties = SubResource( 11 )
+
+[sub_resource type="Resource" id=13]
+script = ExtResource( 15 )
+_points = {
+0: SubResource( 2 ),
+2: SubResource( 4 ),
+3: SubResource( 6 ),
+5: SubResource( 8 ),
+6: SubResource( 10 ),
+7: SubResource( 12 )
+}
+_point_order = [ 0, 2, 5, 6, 7, 3 ]
+_constraints = {
+[ 0, 3 ]: 15
+}
+_next_key = 4
+
+[sub_resource type="Resource" id=14]
+script = ExtResource( 21 )
+_edge_meta_materials = [  ]
+fill_textures = [  ]
+fill_texture_normals = [  ]
+fill_texture_z_index = -10
+fill_mesh_offset = 0.0
+render_offset = 0.0
+
+[sub_resource type="Resource" id=15]
+script = ExtResource( 21 )
+_edge_meta_materials = [ ExtResource( 4 ) ]
+fill_textures = [ ExtResource( 1 ) ]
+fill_texture_normals = [  ]
+fill_texture_z_index = -10
+fill_mesh_offset = 0.0
+render_offset = 0.0
+
+[sub_resource type="Resource" id=16]
+script = ExtResource( 21 )
+_edge_meta_materials = [  ]
+fill_textures = [  ]
+fill_texture_normals = [  ]
+fill_texture_z_index = -10
+fill_mesh_offset = 0.0
+render_offset = 0.0
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 211.655, 381.568 )
+
+[node name="Tutorial" parent="." instance=ExtResource( 2 )]
+position = Vector2( 316.125, 202.657 )
+level = ExtResource( 5 )
+
+[node name="level 1-boss" parent="." instance=ExtResource( 2 )]
+position = Vector2( 582.592, 364.285 )
+level = ExtResource( 7 )
+
+[node name="SS2D_Shape_Meta" type="Node2D" parent="."]
+script = ExtResource( 10 )
+_points = SubResource( 13 )
+material_overrides = {
+}
+shape_material = SubResource( 14 )
+tessellation_stages = 5
+tessellation_tolerence = 4.0
+flip_edges = false
+render_edges = true
+collision_size = 32.0
+collision_offset = 0.0
+collision_polygon_node_path = NodePath("")
+
+[node name="SS2D_Shape_Closed" type="Node2D" parent="SS2D_Shape_Meta"]
+script = ExtResource( 9 )
+_points = SubResource( 13 )
+material_overrides = {
+}
+shape_material = SubResource( 15 )
+tessellation_stages = 5
+tessellation_tolerence = 4.0
+flip_edges = false
+render_edges = true
+collision_size = 32.0
+collision_offset = 0.0
+collision_polygon_node_path = NodePath("")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="SS2D_Shape_Meta"]
+
+[node name="SS2D_Shape_Open" type="Node2D" parent="SS2D_Shape_Meta/StaticBody2D"]
+script = ExtResource( 11 )
+_points = SubResource( 13 )
+material_overrides = {
+}
+shape_material = SubResource( 16 )
+tessellation_stages = 5
+tessellation_tolerence = 4.0
+flip_edges = true
+render_edges = true
+collision_size = 32.0
+collision_offset = 0.0
+collision_polygon_node_path = NodePath("../CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SS2D_Shape_Meta/StaticBody2D"]
+visible = false
+modulate = Color( 1, 1, 1, 0.3 )
+polygon = PoolVector2Array( -15.8789, 182.244, 2.88335, 157.975, 23.8125, 134.755, 46.7985, 112.761, 71.7211, 92.1584, 98.4603, 73.1144, 126.896, 55.796, 156.907, 40.3703, 188.375, 27.0042, 221.178, 15.8647, 255.198, 7.11882, 290.313, 0.933412, 326.403, -2.52455, 363.349, -3.08814, 401.03, -0.590401, 439.326, 5.13559, 478.118, 14.256, 551.216, 37.7267, 614.425, 65.1041, 642.28, 80.4819, 667.604, 97.1194, 690.385, 115.098, 710.605, 134.509, 728.247, 155.442, 743.294, 177.988, 755.729, 202.237, 765.536, 228.282, 772.695, 256.214, 777.19, 286.125, 779.001, 318.104, 778.114, 352.244, 772.523, 416.567, 763.792, 469.709, 757.8, 492.638, 750.47, 513.428, 741.629, 532.301, 731.098, 549.478, 718.695, 565.18, 704.238, 579.629, 687.543, 593.043, 668.421, 605.629, 622.199, 629.247, 564.115, 652.225, 498.926, 670.78, 432.993, 680.4, 367.247, 681.677, 302.625, 675.218, 240.065, 661.634, 180.505, 641.533, 124.884, 615.525, 74.1338, 584.226, 50.9943, 566.336, 29.6595, 546.534, 10.2407, 525.027, -7.14767, 502.017, -22.3914, 477.706, -35.3762, 452.296, -45.9877, 425.99, -54.1117, 398.99, -59.634, 371.497, -62.4404, 343.716, -62.4167, 315.846, -59.4489, 288.092, -53.4231, 260.654, -44.2253, 233.735, -31.7414, 207.536, -15.8789, 182.244, -42.9729, 165.217, -59.7799, 192.114, -73.8595, 221.659, -84.2409, 252.036, -91.0335, 282.953, -94.3707, 314.131, -94.4004, 345.314, -91.2771, 376.264, -85.1539, 406.761, -76.1785, 436.598, -64.4905, 465.576, -50.221, 493.502, -33.4932, 520.18, -14.4235, 545.415, 6.87691, 569.005, 30.2996, 590.743, 55.9194, 610.536, 109.682, 643.684, 168.594, 671.234, 231.54, 692.478, 297.63, 706.826, 365.963, 713.651, 435.618, 712.292, 505.634, 702.069, 574.397, 682.528, 635.379, 658.407, 684.525, 633.282, 706.383, 618.909, 725.596, 603.459, 742.6, 586.454, 757.341, 567.789, 769.806, 547.469, 780.088, 525.543, 788.397, 502.01, 795.094, 476.356, 804.275, 420.546, 810.063, 354.047, 810.997, 317.619, 809.021, 282.843, 804.058, 249.859, 796.055, 218.66, 784.988, 189.279, 770.884, 161.778, 753.828, 136.217, 733.95, 112.623, 711.399, 90.9655, 686.317, 71.1607, 658.812, 53.083, 628.537, 36.3836, 562.479, 7.77428, 486.677, -16.5781, 445.359, -26.2905, 404.457, -32.4064, 364.163, -35.0778, 324.631, -34.4755, 286.007, -30.7756, 248.433, -24.1579, 212.043, -14.8035, 176.967, -2.89316, 143.329, 11.3942, 111.248, 27.8825, 80.8443, 46.3996, 52.2323, 66.7776, 25.5288, 88.853, 0.851057, 112.467, -21.6807, 137.466, -41.203, 162.682 )
